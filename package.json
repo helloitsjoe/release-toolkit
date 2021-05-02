@@ -1,0 +1,24 @@
+{
+  "name": "changelog",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "Changelog generation CLI",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helloitsjoe/changelog.git"
+  },
+  "keywords": [],
+  "author": "Joe Boyle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helloitsjoe/changelog/issues"
+  },
+  "homepage": "https://github.com/helloitsjoe/changelog#readme",
+  "dependencies": {
+    "chalk": "^4.1.1"
+  }
+}
