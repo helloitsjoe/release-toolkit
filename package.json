@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "description": "Changelog generation CLI",
-  "main": "lib/index.js",
+  "bin": "./lib/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
