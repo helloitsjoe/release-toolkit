@@ -5,6 +5,8 @@
   "description": "Changelog generation CLI",
   "bin": "./bin/index.js",
   "scripts": {
+    "changelog": "node bin changelog",
+    "version-bump": "node bin version",
     "test": "node --experimental-vm-modules $(yarn bin)/jest"
   },
   "repository": {
@@ -20,9 +22,11 @@
   "homepage": "https://github.com/helloitsjoe/changelog#readme",
   "dependencies": {
     "chalk": "^4.1.1",
+    "commander": "^7.2.0",
     "inquirer": "^8.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.14.0",
     "eslint": "^7.25.0",
     "jest": "^27.0.0-next.8",
     "prettier": "^2.2.1"

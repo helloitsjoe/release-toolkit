@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals';
-import changelog from '../bin/changelog.js';
+import changelog from '../lib/changelog.js';
 
 const existingChangelog = `## [1.0.0](https://github.com/helloitsjoe/changelog/releases/tag/v1.0.0) (2021-04-28)
 

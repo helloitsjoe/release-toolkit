@@ -1,5 +1,5 @@
 import { jest } from '@jest/globals';
-import createUtils from '../bin/utils';
+import createUtils from '../lib/utils-changelog';
 
 let fs;
 beforeEach(() => {
