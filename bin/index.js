@@ -17,6 +17,15 @@ const commands = {
   version,
 };
 
+if (!cliCommand) {
+  console.error(
+    chalk.red(
+      `Command is required. Options are: ${Object.keys(commands).join(', ')}`
+    )
+  );
+  process.exit(1);
+}
+
 const fallback = () =>
   Promise.reject(new Error(`Command ${cliCommand} does not exist`));
 
