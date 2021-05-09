@@ -3,6 +3,7 @@
 import chalk from 'chalk';
 import changelog from '../lib/changelog.js';
 import version from '../lib/version.js';
+import verify from '../lib/verify.js';
 // import { Command } from 'commander/esm.mjs';
 // const program = new Command();
 
@@ -15,6 +16,7 @@ const cliCommand = process.argv[2];
 const commands = {
   changelog,
   version,
+  verify,
 };
 
 if (!cliCommand) {
