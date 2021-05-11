@@ -1,17 +1,19 @@
 - [x] Change to release-scripts
-- [ ] Version script
+- [x] Version script
   - [x] Bumps package
-  - [ ] Bumps package-lock if exists
-- [ ] `version` automatically runs changelog
-- [ ] Verify script
-  - [ ] Makes sure changelog has been updated
-  - [ ] Makes sure version has been updated
-- [ ] Publish script (publishes to npm and github at current version)
+  - [x] Bumps package-lock if exists
+- [x] Verify script
+  - [x] Makes sure changelog has been updated
+  - [x] Makes sure version has been updated
 - [ ] Pass options to commands
   - `changelog`
-    - [ ] --description
-    - [ ] --type
+    - [ ] --message -m
+    - [ ] --type -t
   - `version`
-    - [ ] --bump
+    - [ ] --patch
+    - [ ] --minor
+    - [ ] --major
     - [ ] --no-changelog
-- [ ] `publish` script
+- [ ] `version` automatically runs changelog
+- [ ] Git tags
+- [ ] Publish script (publishes to npm and github at current version)
