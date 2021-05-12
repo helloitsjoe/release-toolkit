@@ -4,12 +4,8 @@ import chalk from 'chalk';
 import changelog from '../lib/changelog.js';
 import version from '../lib/version.js';
 import verify from '../lib/verify.js';
-// import { Command } from 'commander/esm.mjs';
-// const program = new Command();
-
-// program.option('-c', '--c')
-
-// console.log(`program:`, program);
+import { Command } from 'commander/esm.mjs';
+const program = new Command();
 
 const cliCommand = process.argv[2];
 
@@ -33,7 +29,29 @@ const fallback = () =>
 
 const command = commands[cliCommand] || fallback;
 
-command().catch(err => {
+const argv = (() => {
+  if (command === changelog) {
+    program
+      .option('-t, --type <type>', 'Type of change')
+      .option('-m, --message', 'Description of change')
+      .parse(process.argv);
+
+    return program.opts();
+  } else if (command === version) {
+    program
+      .option('--patch', 'Patch')
+      .option('--minor', 'Minor')
+      .option('--major', 'Major')
+      .option('--no-changelog', 'Skips automatic changelog')
+      .parse(process.argv);
+
+    return program.opts();
+  }
+})();
+
+console.log(`argv:`, argv);
+
+command({ argv }).catch(err => {
   console.error(chalk.red(err.stack));
   process.exit(1);
 });

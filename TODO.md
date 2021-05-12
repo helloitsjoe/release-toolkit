@@ -10,9 +10,9 @@
     - [ ] --message -m
     - [ ] --type -t
   - `version`
-    - [ ] --patch
-    - [ ] --minor
-    - [ ] --major
+    - [x] --patch
+    - [x] --minor
+    - [x] --major
     - [ ] --no-changelog
 - [ ] `version` automatically runs changelog
 - [ ] Git tags
