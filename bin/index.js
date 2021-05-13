@@ -58,7 +58,6 @@ const argv = (() => {
 if (cliCommand === 'release') {
   version()
     .then(() => changelog())
-    .then(() => gitTag())
     .catch(err => {
       console.error(err);
       process.exit(1);
@@ -69,4 +68,3 @@ if (cliCommand === 'release') {
     process.exit(1);
   });
 }
-
