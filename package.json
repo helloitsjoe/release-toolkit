@@ -1,6 +1,6 @@
 {
   "name": "changelog",
-  "version": "1.0.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "Changelog generation CLI",
   "bin": "./bin/index.js",
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/helloitsjoe/changelog#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "chalk": "^4.1.1",
     "commander": "^7.2.0",
     "inquirer": "^8.0.0",
