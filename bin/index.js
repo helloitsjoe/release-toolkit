@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
 import changelog from '../lib/changelog.js';
+import publish from '../lib/publish.js';
 import version from '../lib/version.js';
 import verify from '../lib/verify.js';
 import { Command } from 'commander/esm.mjs';
@@ -14,6 +15,7 @@ const cliCommand = process.argv[2];
 const commands = {
   changelog,
   version,
+  publish,
   verify,
 };
 
@@ -48,6 +50,8 @@ const argv = (() => {
       .option('--minor', 'Minor')
       .option('--major', 'Major')
       .parse(process.argv);
+  } else if (command === publish) {
+    program.option('--dry-run', 'Dry run').parse(process.argv);
   }
 
   return program.opts();
