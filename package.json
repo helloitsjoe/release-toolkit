@@ -1,12 +1,13 @@
 {
   "name": "changelog",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "description": "Changelog generation CLI",
   "bin": "./bin/index.js",
   "scripts": {
     "changelog": "node bin changelog",
     "version-bump": "node bin version",
+    "release": "node bin release",
     "test": "node --experimental-vm-modules $(yarn bin)/jest"
   },
   "repository": {

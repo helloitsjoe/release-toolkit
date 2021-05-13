@@ -1,3 +1,9 @@
+## [0.1.3](https://github.com/helloitsjoe/release-toolkit/releases/tag/v0.1.3) (2021-05-13)
+
+**Chore**
+
+- Test
+
 ## [0.1.2](https://github.com/helloitsjoe/release-toolkit/releases/tag/v0.1.2) (2021-05-13)
 
 **Chore**
