@@ -1,6 +1,6 @@
 {
   "name": "changelog",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "type": "module",
   "description": "Changelog generation CLI",
   "bin": "./bin/index.js",
