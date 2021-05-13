@@ -17,3 +17,8 @@
 - [ ] `version` automatically runs changelog
 - [ ] Git tags
 - [ ] Publish script (publishes to npm and github at current version)
+
+- [ ] Enable Dependabot
+  - [ ] Add CLI args to changelog
+  - [ ] If yarn.lock or package-lock is the only changed file, auto changelog
+        with commit message
