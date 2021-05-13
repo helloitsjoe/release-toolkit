@@ -15,7 +15,8 @@
     - [x] --major
 - [x] Git tags
 - [x] `release` automatically runs version, changelog, git-tag
-- [ ] Publish script (publishes to npm and github at current version)
+  - [ ] allows for options to version/changelog
+- [x] Publish script (publishes to npm and github at current version)
 
 - [ ] Enable Dependabot
   - [ ] Add CLI args to changelog
