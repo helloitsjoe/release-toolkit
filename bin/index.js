@@ -8,38 +8,38 @@ import publish from '../lib/publish.js';
 import version from '../lib/version.js';
 import verify from '../lib/verify.js';
 import { Command } from 'commander/esm.mjs';
+
+const release = ({ argv }) => version({ argv }).then(() => changelog({ argv }));
+
 const program = new Command();
 
 const cliCommand = process.argv[2];
 
 const commands = {
-  release: 'release',
+  release,
   changelog,
   version,
   publish,
   verify,
 };
 
-const cliOptions = Object.keys(commands).join(', ');
-
-if (!cliCommand) {
-  console.error(chalk.red(`Command is required. Options are: ${cliOptions}`));
-  process.exit(1);
-}
-
 try {
   fs.accessSync(path.join(process.cwd(), 'package.json'));
 } catch (err) {
-  console.error(chalk.red('Command must be run from project root'));
-  process.exit(1);
+  throw new Error('Command must be run from project root');
 }
 
-const fallback = () =>
-  Promise.reject(
-    new Error(`Invalid command ${cliCommand}. Options are: ${cliOptions}`)
-  );
+const cliOptions = Object.keys(commands).join(', ');
 
-const command = commands[cliCommand] || fallback;
+if (!cliCommand) {
+  throw new Error(`Command is required. Options are: ${cliOptions}`);
+}
+
+const command = commands[cliCommand];
+
+if (!command) {
+  throw new Error(`Invalid command ${cliCommand}. Options are: ${cliOptions}`);
+}
 
 const argv = (() => {
   if (command === changelog) {
@@ -73,16 +73,7 @@ const argv = (() => {
   return program.opts();
 })();
 
-if (command === 'release') {
-  version({ argv })
-    .then(() => changelog({ argv }))
-    .catch(err => {
-      console.error(err);
-      process.exit(1);
-    });
-} else {
-  command({ argv }).catch(err => {
-    console.error(chalk.red(err.stack));
-    process.exit(1);
-  });
-}
+command({ argv }).catch(err => {
+  console.error(chalk.red(err.stack));
+  process.exit(1);
+});
