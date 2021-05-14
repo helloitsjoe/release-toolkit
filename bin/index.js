@@ -51,7 +51,11 @@ const argv = (() => {
       .option('--major', 'Major')
       .parse(process.argv);
   } else if (command === publish) {
-    program.option('--dry-run', 'Dry run').parse(process.argv);
+    program
+      .option('--dry-run', 'Dry run')
+      .option('--no-npm', 'Do not publish npm')
+      .option('--no-github', 'Do not publish GitHub')
+      .parse(process.argv);
   }
 
   return program.opts();
