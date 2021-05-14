@@ -53,7 +53,7 @@ const argv = (() => {
       .option('--minor', 'Minor')
       .option('--major', 'Major')
       .parse(process.argv);
-  } else if (command === 'release') {
+  } else if (cliCommand === 'release') {
     // Probably a better way to do this than duplicate
     program
       .option('-t, --type <type>', 'Type of change')
