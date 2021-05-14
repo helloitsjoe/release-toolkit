@@ -13,16 +13,17 @@ const program = new Command();
 const cliCommand = process.argv[2];
 
 const commands = {
+  release: 'release',
   changelog,
   version,
   publish,
   verify,
 };
 
+const cliOptions = Object.keys(commands).join(', ');
+
 if (!cliCommand) {
-  const options = Object.keys(commands).join(', ');
-  const message = `Command is required. Options are: ${options}`;
-  console.error(chalk.red(message));
+  console.error(chalk.red(`Command is required. Options are: ${cliOptions}`));
   process.exit(1);
 }
 
@@ -34,7 +35,9 @@ try {
 }
 
 const fallback = () =>
-  Promise.reject(new Error(`Command ${cliCommand} does not exist`));
+  Promise.reject(
+    new Error(`Invalid command ${cliCommand}. Options are: ${cliOptions}`)
+  );
 
 const command = commands[cliCommand] || fallback;
 
@@ -50,7 +53,7 @@ const argv = (() => {
       .option('--minor', 'Minor')
       .option('--major', 'Major')
       .parse(process.argv);
-  } else if (cliCommand === 'release') {
+  } else if (command === 'release') {
     // Probably a better way to do this than duplicate
     program
       .option('-t, --type <type>', 'Type of change')
@@ -70,7 +73,7 @@ const argv = (() => {
   return program.opts();
 })();
 
-if (cliCommand === 'release') {
+if (command === 'release') {
   version({ argv })
     .then(() => changelog({ argv }))
     .catch(err => {
