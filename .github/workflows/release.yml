@@ -11,9 +11,8 @@ jobs:
       # - run: npx helloitsjoe/release-toolkit publish
       - run: |
           curl --request POST \
-            --header "Accept: application/vnd.github.v3+json" \
-            --header "authorization: token ${{ secrets.GITHUB_TOKEN }} \
-            --url https://api.github.com/repos/${{ github.repository }}/release
+            --header "authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            --url "https://api.github.com/repos/${{ github.repository }}/release"
             --data '{"tag_name": "v1", "name": "v1"}'
             --fail
         env:
