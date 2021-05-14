@@ -42,10 +42,19 @@ const argv = (() => {
   if (command === changelog) {
     program
       .option('-t, --type <type>', 'Type of change')
-      .option('-m, --message', 'Description of change')
+      .option('-m, --message <message>', 'Description of change')
       .parse(process.argv);
   } else if (command === version) {
     program
+      .option('--patch', 'Patch')
+      .option('--minor', 'Minor')
+      .option('--major', 'Major')
+      .parse(process.argv);
+  } else if (cliCommand === 'release') {
+    // Probably a better way to do this than duplicate
+    program
+      .option('-t, --type <type>', 'Type of change')
+      .option('-m, --message <message>', 'Description of change')
       .option('--patch', 'Patch')
       .option('--minor', 'Minor')
       .option('--major', 'Major')
@@ -62,8 +71,8 @@ const argv = (() => {
 })();
 
 if (cliCommand === 'release') {
-  version()
-    .then(() => changelog())
+  version({ argv })
+    .then(() => changelog({ argv }))
     .catch(err => {
       console.error(err);
       process.exit(1);
