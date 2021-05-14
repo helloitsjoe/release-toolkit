@@ -5,20 +5,20 @@
 - [x] Verify script
   - [x] Makes sure changelog has been updated
   - [x] Makes sure version has been updated
-- [ ] Pass options to commands
+- [x] Pass options to commands
   - `changelog`
-    - [ ] --message -m
-    - [ ] --type -t
+    - [x] --message -m
+    - [x] --type -t
   - `version`
     - [x] --patch
     - [x] --minor
     - [x] --major
 - [x] Git tags
 - [x] `release` automatically runs version, changelog, git-tag
-  - [ ] allows for options to version/changelog
+  - [x] allows for options to version/changelog
 - [x] Publish script (publishes to npm and github at current version)
 
 - [ ] Enable Dependabot
-  - [ ] Add CLI args to changelog
+  - [x] Add CLI args to changelog
   - [ ] If yarn.lock or package-lock is the only changed file, auto changelog
         with commit message
