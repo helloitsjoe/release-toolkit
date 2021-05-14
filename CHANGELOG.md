@@ -1,10 +1,16 @@
-## [0.2.0](https://github.com/undefined/releases/tag/v0.2.0) (2021-05-14)
+## [0.2.1](https://github.com/helloitsjoe/release-toolkit/releases/tag/v0.2.1) (2021-05-14)
+
+**Bug fix**
+
+- Fixed undefined repo name in changelog
+
+## [0.2.0](https://github.com/helloitsjoe/release-toolkit/releases/tag/v0.2.0) (2021-05-14)
 
 **Feature**
 
 - Feature complete
 
-## [0.1.4](https://github.com/undefined/releases/tag/v0.1.4) (2021-05-13)
+## [0.1.4](https://github.com/helloitsjoe/release-toolkit/releases/tag/v0.1.4) (2021-05-13)
 
 **Chore**
 
@@ -22,13 +28,13 @@
 
 - Test again
 
-## [0.1.1](https://github.com/helloitsjoe/release-toolkit/releases/tag/v0.1.1) (2021-05-13)
+## [0.1.1](https://github.com/helloitsjoe/release-toolkit/releases/tag/0.1.1) (2021-05-13)
 
 **Chore**
 
 - Test release
 
-## [0.1.0](https://github.com/helloitsjoe/release-toolkit/releases/tag/v0.1.0) (2021-05-12)
+## [0.1.0](https://github.com/helloitsjoe/release-toolkit/releases/tag/0.1.0) (2021-05-12)
 
 **Feature**
 
