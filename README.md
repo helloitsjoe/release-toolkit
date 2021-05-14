@@ -24,17 +24,22 @@
 
 ## Usage
 
-`relase-toolkit` is designed to be used in GitHub workflows. Here's an example
-of a library published to npm, with releases to GitHub:
+`relase-toolkit` is designed to be used in GitHub workflows.
 
-**GitHub repo**
+**Example GitHub repo**
 
-It's recommended to set branch protection rules in place to prevent code being
-pushed directly to `main`. Branch rules should be set up to require all checks
-pass before PRs can be merged to `main`.
+Here's an example library's `.github/workflows` folder. This example uses [branch
+protection rules](https://docs.github.com/en/github/administering-a-repository/about-protected-branches) which:
 
-**verify.yml** makes sure `version` and `changelog` have been updated, and runs
-every time code is pushed to any branch other than `main`.
+1. Prevent code being pushed directly to the `main` branch
+2. Prevent branches from being merged until they have passing pipelines
+
+When all pipelines have passed and the branch is merged into `main`, the new
+version of the library is automatically published to `npm` and a GitHub release is created.
+
+**verify.yml** runs every time code is pushed to any branch _other than_ `main`,
+making sure `version` and `changelog` have been updated, and verifies that the build
+and unit tests pass. If any of these fail, the branch won't merge to `main`.
 
 ```yml
 on:
@@ -47,15 +52,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: c-hive/gha-yarn-cache@v1
       - run: npx helloitsjoe/release-toolkit verify
       - run: yarn
       - run: yarn test
       - run: yarn build
 ```
 
-**release.yml** publishes to `npm` and creates a GitHub release every time code
-is merged to the `main` branch.
+**release.yml** runs every time a branch is merged to `main`. At that point all verification
+and tests have passed, so it automatically publishes to `npm` and creates a GitHub release.
+For authentication, it uses environment variables set in the GitHub repo's `secrets` section.
 
 ```yml
 on:
@@ -72,9 +77,6 @@ jobs:
         with:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
-      - uses: c-hive/gha-yarn-cache@v1
-      - run: yarn
-      - run: yarn test
       - run: yarn build
       - run: npx helloitsjoe/release-toolkit publish
         env:
