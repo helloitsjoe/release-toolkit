@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      # - run: npx helloitsjoe/release-toolkit publish
-      - run: |
-          curl --request POST \
-            --header "accept: application/vnd.github.v3+json" \
-            --header "authorization: token ${{ secrets.GITHUB_TOKEN }}" \
-            --header "content-type: application/json" \
-            --url "https://api.github.com/repos/${{ github.repository }}/releases" \
-            --data '{"tag_name": "v1", "name": "v1"}' \
-            --fail
+      - run: npx helloitsjoe/release-toolkit publish
         env:
-          GIT_RELEASE_TOKEN: ${{ secrets.GIT_RELEASE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # - run: |
+      #     curl --request POST \
+      #       --header "accept: application/vnd.github.v3+json" \
+      #       --header "authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+      #       --header "content-type: application/json" \
+      #       --url "https://api.github.com/repos/${{ github.repository }}/releases" \
+      #       --data '{"tag_name": "v1", "name": "v1"}' \
+      #       --fail
