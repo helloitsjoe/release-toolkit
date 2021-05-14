@@ -2,10 +2,11 @@
 
 ## Commands
 
-- **`version`**: Upgrades package version using `--patch`, `--minor`, or `--major`
+- **`version`**: Upgrades package version using `--patch`, `--minor`, or
+  `--major`
 
-- **`changelog`**: Updates or creates CHANGELOG.md (requires `version` run first).
-  Will prompt for type of change and description unless `--type` and/or
+- **`changelog`**: Updates or creates CHANGELOG.md (requires `version` run
+  first). Will prompt for type of change and description unless `--type` and/or
   `--message` args are used. Allowed types:
 
   - `Feature`
@@ -13,9 +14,9 @@
   - `Chore`
   - `Breaking change`
 
-- **`verify`**: Verifies `version` and `changelog` have both been run
-
 - **`release`**: Runs `version` and `changelog`
+
+- **`verify`**: Verifies package version and CHANGELOG.md have both been updated
 
 - **`publish`**: Uses current version to publish to `npm` and create a GitHub
   release by default, either can be skipped with `--no-npm` or `--no-github`
