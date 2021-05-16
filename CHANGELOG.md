@@ -1,3 +1,9 @@
+## [1.0.0](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.0) (2021-05-16)
+
+**Breaking changes**
+
+=- Renamed package
+
 ## [0.2.3](https://github.com/helloitsjoe/release-toolkit/releases/tag/v0.2.3) (2021-05-14)
 
 **Chore**
