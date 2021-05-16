@@ -1,26 +1,27 @@
 {
-  "name": "changelog",
+  "name": "release-toolkit",
   "version": "0.2.3",
   "type": "module",
-  "description": "Changelog generation CLI",
+  "description": "Release toolkit",
   "bin": "./bin/index.js",
   "scripts": {
     "changelog": "node bin changelog",
     "version-bump": "node bin version",
     "release": "node bin release",
+    "verify": "node bin verify",
     "test": "node --experimental-vm-modules $(yarn bin)/jest"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/helloitsjoe/changelog.git"
+    "url": "git+https://github.com/helloitsjoe/release-toolkit.git"
   },
   "keywords": [],
   "author": "Joe Boyle",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/helloitsjoe/changelog/issues"
+    "url": "https://github.com/helloitsjoe/release-toolkit/issues"
   },
-  "homepage": "https://github.com/helloitsjoe/changelog#readme",
+  "homepage": "https://github.com/helloitsjoe/release-toolkit#readme",
   "dependencies": {
     "axios": "^0.21.1",
     "chalk": "^4.1.1",
