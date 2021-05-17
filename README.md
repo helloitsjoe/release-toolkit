@@ -28,14 +28,19 @@
 
 **Example GitHub repo**
 
-Here's an example library's `.github/workflows` folder. This example uses [branch
+Here's an example library. This example uses [branch
 protection rules](https://docs.github.com/en/github/administering-a-repository/about-protected-branches) which:
 
 1. Prevent code being pushed directly to the `main` branch
 2. Prevent branches from being merged until they have passing pipelines
 
-When all pipelines have passed and the branch is merged into `main`, the new
-version of the library is automatically published to `npm` and a GitHub release is created.
+<img width="828" alt="Screen Shot 2021-05-16 at 8 57 32 PM" src="https://user-images.githubusercontent.com/8823810/118419197-5fdc9b00-b689-11eb-9ae3-c9203fac38c6.png">
+
+**Example workflow pipelines**
+
+These pipeline configs live in the `.github/workflows` directory. When all pipelines
+have passed and the branch is merged into `main`, the new version of the library is
+automatically published to `npm` and a GitHub release is created.
 
 **verify.yml** runs every time code is pushed to any branch _other than_ `main`,
 making sure `version` and `changelog` have been updated, and verifies that the build
@@ -52,7 +57,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx helloitsjoe/release-toolkit verify
+      - run: npx helloitsjoe/release-toolkit#v1.0.0 verify
       - run: yarn
       - run: yarn test
       - run: yarn build
@@ -78,7 +83,7 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - run: yarn build
-      - run: npx helloitsjoe/release-toolkit publish
+      - run: npx helloitsjoe/release-toolkit#v1.0.0 publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
