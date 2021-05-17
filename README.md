@@ -36,6 +36,8 @@ protection rules](https://docs.github.com/en/github/administering-a-repository/a
 
 <img width="828" alt="Screen Shot 2021-05-16 at 8 57 32 PM" src="https://user-images.githubusercontent.com/8823810/118419197-5fdc9b00-b689-11eb-9ae3-c9203fac38c6.png">
 
+You might also want to enable `Require pull request reviews` depending on your setup.
+
 **Example workflow pipelines**
 
 These pipeline configs live in the `.github/workflows` directory. When all pipelines
