@@ -1,3 +1,9 @@
+## [1.0.1](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.1) (2021-05-31)
+
+**Chore**
+
+- Bump deps
+
 ## [1.0.0](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.0) (2021-05-16)
 
 **Breaking changes**
