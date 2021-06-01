@@ -1,3 +1,9 @@
+## [1.0.2](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.2) (2021-06-01)
+
+**Chore**
+
+- Remove version from release-toolkit scripts
+
 ## [1.0.1](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.1) (2021-05-31)
 
 **Chore**

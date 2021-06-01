@@ -59,7 +59,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: npx helloitsjoe/release-toolkit#v1.0.0 verify
+      - run: npx helloitsjoe/release-toolkit verify
       - run: yarn
       - run: yarn test
       - run: yarn build
@@ -85,7 +85,7 @@ jobs:
           node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - run: yarn build
-      - run: npx helloitsjoe/release-toolkit#v1.0.0 publish
+      - run: npx helloitsjoe/release-toolkit publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
