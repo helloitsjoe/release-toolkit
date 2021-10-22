@@ -1,3 +1,9 @@
+## [1.0.3](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.3) (2021-10-21)
+
+**Chore**
+
+- Remove log
+
 ## [1.0.2](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.2) (2021-06-01)
 
 **Chore**
