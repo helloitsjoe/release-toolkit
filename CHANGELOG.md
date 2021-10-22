@@ -1,3 +1,9 @@
+## [1.0.4](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.4) (2021-10-22)
+
+**Chore**
+
+- Update deps
+
 ## [1.0.3](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.3) (2021-10-21)
 
 **Chore**
