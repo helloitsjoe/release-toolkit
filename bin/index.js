@@ -73,7 +73,7 @@ const argv = (() => {
   return program.opts();
 })();
 
-command({ argv }).catch(err => {
+command({ argv }).catch((err) => {
   console.error(chalk.red(err.stack));
   process.exit(1);
 });
