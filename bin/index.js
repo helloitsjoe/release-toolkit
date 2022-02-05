@@ -8,8 +8,12 @@ import publish from '../lib/publish.js';
 import version from '../lib/version.js';
 import verify from '../lib/verify.js';
 import { Command } from 'commander/esm.mjs';
+import createUtils from '../lib/utils.js';
 
-const release = ({ argv }) => version({ argv }).then(() => changelog({ argv }));
+const release = ({ argv, utils }) =>
+  version({ argv, utils }).then(() => changelog({ argv, utils }));
+
+const utils = createUtils();
 
 const program = new Command();
 
@@ -73,7 +77,7 @@ const argv = (() => {
   return program.opts();
 })();
 
-command({ argv }).catch((err) => {
+command({ argv, utils }).catch((err) => {
   console.error(chalk.red(err.stack));
   process.exit(1);
 });
