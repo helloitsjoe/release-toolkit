@@ -1,3 +1,9 @@
+## [1.0.6](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.6) (2022-02-04)
+
+**Chore**
+
+- Refactor utils
+
 ## [1.0.5](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.5) (2022-02-03)
 
 **Chore**
