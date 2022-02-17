@@ -1,3 +1,9 @@
+## [1.0.7](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.7) (2022-02-17)
+
+**Chore**
+
+- Update follow-redirects
+
 ## [1.0.6](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.6) (2022-02-04)
 
 **Chore**
