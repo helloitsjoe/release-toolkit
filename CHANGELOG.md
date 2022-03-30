@@ -1,3 +1,9 @@
+## [1.0.8](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.8) (2022-03-29)
+
+**Chore**
+
+Bump dependencies
+
 ## [1.0.7](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.7) (2022-02-17)
 
 **Chore**
