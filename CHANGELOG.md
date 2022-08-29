@@ -1,3 +1,9 @@
+## [1.0.9](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.9) (2022-08-28)
+
+**Bug fix**
+
+- Fix top-level error handling
+
 ## [1.0.8](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.8) (2022-03-29)
 
 **Chore**
