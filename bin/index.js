@@ -13,71 +13,81 @@ import createUtils from '../lib/utils.js';
 const release = ({ argv, utils }) =>
   version({ argv, utils }).then(() => changelog({ argv, utils }));
 
-const utils = createUtils();
+function main() {
+  const utils = createUtils();
 
-const program = new Command();
+  const program = new Command();
 
-const cliCommand = process.argv[2];
+  const cliCommand = process.argv[2];
+  console.log('cliCommnad', cliCommand);
 
-const commands = {
-  release,
-  changelog,
-  version,
-  publish,
-  verify,
-};
+  const commands = {
+    release,
+    changelog,
+    version,
+    publish,
+    verify,
+  };
 
-try {
-  fs.accessSync(path.join(process.cwd(), 'package.json'));
-} catch (err) {
-  throw new Error('Command must be run from project root');
-}
-
-const cliOptions = Object.keys(commands).join(', ');
-
-if (!cliCommand) {
-  throw new Error(`Command is required. Options are: ${cliOptions}`);
-}
-
-const command = commands[cliCommand];
-
-if (!command) {
-  throw new Error(`Invalid command ${cliCommand}. Options are: ${cliOptions}`);
-}
-
-const argv = (() => {
-  if (command === changelog) {
-    program
-      .option('-t, --type <type>', 'Type of change')
-      .option('-m, --message <message>', 'Description of change')
-      .parse(process.argv);
-  } else if (command === version) {
-    program
-      .option('--patch', 'Patch')
-      .option('--minor', 'Minor')
-      .option('--major', 'Major')
-      .parse(process.argv);
-  } else if (cliCommand === 'release') {
-    // Probably a better way to do this than duplicate
-    program
-      .option('-t, --type <type>', 'Type of change')
-      .option('-m, --message <message>', 'Description of change')
-      .option('--patch', 'Patch')
-      .option('--minor', 'Minor')
-      .option('--major', 'Major')
-      .parse(process.argv);
-  } else if (command === publish) {
-    program
-      .option('--dry-run', 'Dry run')
-      .option('--no-npm', 'Do not publish npm')
-      .option('--no-github', 'Do not publish GitHub')
-      .parse(process.argv);
+  try {
+    fs.accessSync(path.join(process.cwd(), 'package.json'));
+  } catch (err) {
+    throw new Error('Command must be run from project root');
   }
 
-  return program.opts();
-})();
+  const cliOptions = Object.keys(commands).join(', ');
 
-command({ argv, utils }).catch((err) => {
+  if (!cliCommand) {
+    throw new Error(`Command is required. Options are: ${cliOptions}`);
+  }
+
+  const command = commands[cliCommand];
+
+  if (!command) {
+    throw new Error(
+      `Invalid command ${cliCommand}. Options are: ${cliOptions}`
+    );
+  }
+
+  const argv = (() => {
+    if (command === changelog) {
+      program
+        .option('-t, --type <type>', 'Type of change')
+        .option('-m, --message <message>', 'Description of change')
+        .parse(process.argv);
+    } else if (command === version) {
+      program
+        .option('--patch', 'Patch')
+        .option('--minor', 'Minor')
+        .option('--major', 'Major')
+        .parse(process.argv);
+    } else if (cliCommand === 'release') {
+      // Probably a better way to do this than duplicate
+      program
+        .option('-t, --type <type>', 'Type of change')
+        .option('-m, --message <message>', 'Description of change')
+        .option('--patch', 'Patch')
+        .option('--minor', 'Minor')
+        .option('--major', 'Major')
+        .parse(process.argv);
+    } else if (command === publish) {
+      program
+        .option('--dry-run', 'Dry run')
+        .option('--no-npm', 'Do not publish npm')
+        .option('--no-github', 'Do not publish GitHub')
+        .parse(process.argv);
+    }
+
+    return program.opts();
+  })();
+
+  return command({ argv, utils });
+}
+
+try {
+  main();
+} catch (err) {
+  console.error(chalk.red(err.message));
   console.error(chalk.red(err.stack));
   process.exit(1);
-});
+}
