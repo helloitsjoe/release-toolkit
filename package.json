@@ -1,6 +1,6 @@
 {
   "name": "release-toolkit",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "type": "module",
   "description": "Release toolkit",
   "bin": "./bin/index.js",

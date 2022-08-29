@@ -8,10 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: c-hive/gha-yarn-cache@v1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: yarn
       - run: yarn
       - run: yarn test
-      - run: npx helloitsjoe/release-toolkit verify
-      - run: npx helloitsjoe/release-toolkit publish --no-npm --dry-run
+      - run: npx github:helloitsjoe/release-toolkit verify
+      - run: npx github:helloitsjoe/release-toolkit publish --no-npm --dry-run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
