@@ -11,7 +11,7 @@ jobs:
       - uses: c-hive/gha-yarn-cache@v1
       - run: yarn
       - run: yarn test
-      - run: npx helloitsjoe/release-toolkit verify
-      - run: npx helloitsjoe/release-toolkit publish --no-npm --dry-run
+      - run: npx github:helloitsjoe/release-toolkit verify
+      - run: npx github:helloitsjoe/release-toolkit publish --no-npm --dry-run
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
