@@ -1,3 +1,9 @@
+## [1.1.0](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.1.0) (2022-08-29)
+
+**Feature**
+
+- Add body to GitHub release
+
 ## [1.0.9](https://github.com/helloitsjoe/release-toolkit/releases/tag/v1.0.9) (2022-08-28)
 
 **Bug fix**
