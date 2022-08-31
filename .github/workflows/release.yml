@@ -12,6 +12,8 @@ jobs:
         with:
           node-version: 16
           cache: yarn
+      - run: node -v
+      - run: npm -v
       - run: yarn
       - run: yarn test
       - run: npx github:helloitsjoe/release-toolkit publish --no-npm
