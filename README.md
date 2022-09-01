@@ -1,5 +1,9 @@
 # Release toolkit CLI
 
+If you would like to read about how this toolkit was made, start with [this
+blog
+post](https://helloitsjoe.github.io/blog/2021-05-04-making-a-release-toolkit-part-1-changelog/).
+
 ## Commands
 
 - **`version`**: Upgrades package version using `--patch`, `--minor`, or
